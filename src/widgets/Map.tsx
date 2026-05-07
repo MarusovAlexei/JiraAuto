@@ -4,15 +4,15 @@ import { Container } from '@/shared/ui/Container';
 export const Map: React.FC = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold mb-4">
+      <Container maxWidth="2xl">
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
             Где мы{' '}
             <span className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent">
               находимся
             </span>
           </h2>
-          <p className="text-lg text-[#6B7280]">
+          <p className="text-base md:text-lg text-[#6B7280]">
             Пр-т Независимости, 95/1 • График работы: 09.00-21.00 ежедневно
           </p>
         </div>

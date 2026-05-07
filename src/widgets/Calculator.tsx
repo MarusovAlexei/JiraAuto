@@ -19,23 +19,23 @@ export const Calculator: React.FC = () => {
 
   return (
     <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold mb-6">
+      <Container maxWidth="2xl">
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
             Узнайте стоимость квартиры{' '}
             <span className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent">
               БЕСПЛАТНО!
             </span>
           </h2>
-          <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-[#6B7280] max-w-3xl mx-auto">
             Ответьте на несколько простых вопросов и получите информацию по стоимости Вашей квартиры
           </p>
         </div>
 
         <Card className="max-w-6xl mx-auto shadow-2xl">
-          <h3 className="text-3xl font-bold mb-8 text-center">Состояние квартиры:</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Состояние квартиры:</h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-10">
             {apartmentTypes.map((type) => (
               <div
                 key={type.id}
@@ -58,21 +58,21 @@ export const Calculator: React.FC = () => {
                     </div>
                   )}
                 </div>
-                <div className="p-4 bg-white text-center font-semibold text-lg">
+                <div className="p-3 md:p-4 bg-white text-center font-semibold text-sm md:text-lg">
                   {type.name}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="flex justify-between items-center pt-6 border-t border-gray-200">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-200">
+            <div className="flex flex-col md:flex-row items-center gap-3">
               <span className="text-[#9CA3AF] font-medium">Шаг 1 из 6</span>
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5, 6].map((step) => (
                   <div
                     key={step}
-                    className={`h-2 w-12 rounded-full transition-all ${
+                    className={`h-2 w-10 md:w-12 rounded-full transition-all ${
                       step === 1 ? 'bg-[#7C3AED]' : 'bg-gray-200'
                     }`}
                   />

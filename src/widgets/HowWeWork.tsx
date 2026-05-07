@@ -37,33 +37,33 @@ const steps = [
 export const HowWeWork: React.FC = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold mb-4">
+      <Container maxWidth="2xl">
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
             Как мы <span className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent">работаем</span>
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-[#6B7280] max-w-2xl mx-auto">
             Прозрачный процесс работы с обратной связью на каждом этапе
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 max-w-6xl mx-auto px-4">
           {steps.map((step) => (
-            <div key={step.number} className="flex gap-6 bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-lg">
+            <div key={step.number} className="flex gap-4 md:gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl font-bold shadow-lg">
                 {step.number}
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3 text-[#111827]">{step.title}</h3>
-                <p className="text-[#6B7280] leading-relaxed">{step.description}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-[#111827]">{step.title}</h3>
+                <p className="text-sm md:text-base text-[#6B7280] leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-4 bg-gradient-to-r from-yellow-50 to-yellow-100 p-8 rounded-2xl max-w-2xl mx-auto shadow-lg border-2 border-yellow-200">
-          <div className="text-6xl animate-pulse">❗</div>
-          <p className="text-2xl font-bold text-yellow-900">Обратная связь на каждом этапе!</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 md:p-8 rounded-2xl max-w-2xl mx-4 md:mx-auto shadow-lg border-2 border-yellow-200">
+          <div className="text-5xl md:text-6xl animate-pulse">❗</div>
+          <p className="text-xl md:text-2xl font-bold text-yellow-900 text-center sm:text-left">Обратная связь на каждом этапе!</p>
         </div>
       </Container>
     </section>
