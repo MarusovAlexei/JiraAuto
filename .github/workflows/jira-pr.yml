@@ -1,0 +1,28 @@
+name: Create Jira task on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  jira:
+    if: github.repository == 'MarusovAlexei/JiraAuto'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send webhook to Jira
+        run: |
+          curl -X POST "https://api-private.atlassian.com/automation/webhooks/jira/a/198f818d-ce86-45c8-afdf-2ab1fbe299f5/019e03f4-721d-7876-bcfa-320fdfbea277" \
+            -H "Content-Type: application/json" \
+            -H "X-Automation-Webhook-Token: 1601a72bf26f8712453d0cf76e0b86ed679e2266" \
+            -d '{
+              "repository": {
+                "name": "${{ github.event.repository.name }}",
+                "full_name": "${{ github.repository }}"
+              },
+              "pullRequest": {
+                "title": "${{ github.event.pull_request.title }}",
+                "url": "${{ github.event.pull_request.html_url }}",
+                "author": "${{ github.event.pull_request.user.login }}"
+              }
+            }'
